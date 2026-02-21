@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas Wear Morocco — Hoodies</title>
+  <meta name="description" content="Atlas Wear Morocco — Hoodies premium. Commande rapide via WhatsApp." />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#111826;
+      --muted:#9bb0c8;
+      --text:#e8f0ff;
+      --accent:#4cc9f0;
+      --accent2:#80ffdb;
+      --border:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(76,201,240,.18), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(128,255,219,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:22px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; position:sticky; top:0; backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.6); border-bottom:1px solid var(--border);
+      z-index:10;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 30px rgba(76,201,240,.25);
+    }
+    .navlinks{display:flex; gap:14px; color:var(--muted); font-weight:600}
+    .navlinks a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px; border-radius:14px; border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      font-weight:700;
+    }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#071018;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .hero{
+      padding:54px 0 26px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:26px; align-items:center;
+    }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border:1px solid var(--border); border-radius:999px;
+      color:var(--muted); background: rgba(255,255,255,.03); font-weight:700;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .lead{color:var(--muted); font-size: 16.5px; line-height:1.6; max-width: 58ch}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .mini{
+      display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; color:var(--muted);
+      font-weight:650;
+    }
+    .mini span{
+      padding:8px 10px; border:1px solid var(--border); border-radius:999px;
+      background: rgba(255,255,255,.02);
+    }
+
+    .heroCard{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border-radius:22px;
+      padding:18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+    .heroImg{
+      width:100%; aspect-ratio: 4/5; border-radius:18px;
+      background:
+        linear-gradient(135deg, rgba(76,201,240,.25), rgba(128,255,219,.18));
+      background-size:   cover;
+      background-position:center;
+      border:1px solid var(--border);
+    }
+    .heroCard .row{display:flex; justify-content:space-between; margin-top:12px; gap:10px}
+    .pill{
+      flex:1;
+      padding: 10px 12px;
+border-radius: 16px;
+border: 1px solid var(--border);
+
+      background: rgba(255,255,255,.03);
+      color:var(--muted); font-weight:750; text-align:center;
+    }
+
+    section{padding:26px 0}
+    .sectionTitle{display:flex; align-items:end; justify-content:space-between; gap:10px}
+    .sectionTitle h2{margin:0; font-size:24px}
+    .sectionTitle p{margin:0; color:var(--muted)}
+    .grid{
+      margin-top:14px;
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    }
+    .card{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      border-radius:20px; overflow:hidden;
+      transition: transform .15s ease;
+    }
+    .card:hover{transform: translateY(-2px)}
+    .pimg{
+      width:100%; aspect-ratio: 4/3;
+      background:#0f1622;
+      background-size:cover; background-position:center;
+      border-bottom:1px solid var(--border);
+    }
+    .pad{padding:14px}
+    .name{font-weight:850; margin:0 0 6px}
+    .meta{margin:0; color:var(--muted); font-weight:650; font-size:14px; line-height:1.45}
+    .priceRow{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:10px}
+    .price{font-weight:900}
+    .smallBtn{
+      padding:10px 12px; border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      font-weight:800;
+    }
+    .smallBtn.primary{
+      border:none; background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#071018;
+    }
+
+    .twoCols{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px}
+    .box{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      border-radius:20px; padding:16px;
+    }
+    .box h3{margin:0 0 8px}
+    .box ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.7; font-weight:650}
+    .footer{
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      padding:18px 0 28px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+
+    .formRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    input, select{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px 12px;
+      color:var(--text);
+      font-weight:650;
+      outline:none;
+    }
+    input::placeholder{color:rgba(155,176,200,.7)}
+    .grow{flex:1; min-width: 200px}
+    .note{color:var(--muted); font-weight:650; margin-top:10px; line-height:1.6}
+
+    @media (max-width: 860px){
+      .hero{grid-template-columns: 1fr; padding-top:28px}
+      .grid{grid-template-columns: 1fr}
+      .twoCols{grid-template-columns:1fr}
+      .navlinks{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <a class="brand" href="#top">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div>Atlas Wear Morocco</div>
+          <div style="font-size:12px; color:var(--muted); font-weight:700">Hoodies • Streetwear</div>
+        </div>
+      </a>
+
+      <div class="navlinks">
+        <a href="#products">Produits</a>
+        <a href="#about">Qualité</a>
+        <a href="#order">Commander</a>
+      </div>
+
+      <a class="btn primary" href="#order">Commander</a>
+    </div>
+  </div>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <div class="badge">🇲🇦 Made for Morocco • Style Atlas</div>
+        <h1>Hoodies premium <br/>pour un look street clean.</h1>
+        <p class="lead">
+          Découvrez la collection Atlas Wear Morocco: tissu confortable, coupe moderne, détails soignés.
+          Commande rapide via WhatsApp — livraison partout au Maroc.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="#products">Voir les hoodies</a>
+          <a class="btn" href="#order">Commander maintenant</a>
+        </div>
+
+        <div class="mini">
+          <span>✅ Livraison Maroc</span>
+          <span>✅ Qualité premium</span>
+          <span>✅ Paiement à la livraison</span>
+        </div>
+      </div>
+
+      <div class="heroCard">
+        <div class="heroImg" role="img" aria-label="Hoodie Atlas Wear Morocco"><img src="images/logo.png" class="pimg" alt="Atlas Hoodie Black"></div>
+        <div class="row">
+          <div class="pill">🔥 Best-sellers</div>
+          <div class="pill">🎁 Pack couple</div>
+          <div class="pill">⚡ Stock limité</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="sectionTitle">
+        <div>
+          <h2>Nos Hoodies</h2>
+          <p>اختار الموديل، اللون، وقياسك.</p>
+        </div>
+        <a class="btn" href="#order">طلب سريع</a>
+      </div>
+
+      <div class="grid" id="productGrid">
+        <!-- Product 1 -->
+<article class="card">
+  <img src="images/hoodie9.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+        <!-- Product 2 -->
+<article class="card">
+  <img src="images/hoodie10.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+        <!-- Product 3 -->
+  <article class="card">
+  <img src="images/hoodie11.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+        <!-- Product 4 -->
+<article class="card">
+  <img src="images/hoodie12.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 5 -->
+<article class="card">
+  <img src="images/hoodie13.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 6 -->
+<article class="card">
+  <img src="images/hoodie14.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 7 -->
+<article class="card">
+  <img src="images/hoodie15.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 8 -->
+<article class="card">
+  <img src="images/hoodie16.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 9 -->
+<article class="card">
+  <img src="images/hoodie17.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 10 -->
+<article class="card">
+  <img src="images/hoodie18.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 11 -->
+<article class="card">
+  <img src="images/hoodie19.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 12 -->
+<article class="card">
+  <img src="images/hoodie20.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 13 -->
+<article class="card">
+  <img src="images/hoodie21.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 14 -->
+<article class="card">
+  <img src="images/hoodie22.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 15 -->
+<article class="card">
+  <img src="images/hoodie23.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 16 -->
+<article class="card">
+  <img src="images/hoodie24.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 17 -->
+<article class="card">
+  <img src="images/hoodie1.jpg" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+
+<!-- Product 18 -->
+<article class="card">
+  <img src="images/hoodie8.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 19 -->
+<article class="card">
+  <img src="images/hoodie7.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 20 -->
+<article class="card">
+  <img src="images/hoodie6.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 21 -->
+<article class="card">
+  <img src="images/hoodie5.jpg.png" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 22 -->
+<article class="card">
+  <img src="images/hoodie4.jpg" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 23 -->
+<article class="card">
+  <img src="images/hoodie3.jpg" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- Product 24 -->
+<article class="card">
+  <img src="images/hoodie2.jpg" class="pimg" alt="Atlas Hoodie Black">
+  <div class="pad">
+    <p class="name">Atlas Hoodie — Black</p>
+    <p class="meta">Cotton blend • Coupe oversize • Logo brodé</p>
+    <div class="priceRow">
+      <div class="price">299 MAD</div>
+      <button class="smallBtn primary" onclick="quickOrder('Atlas Hoodie — Black', '299')">
+        Commander
+      </button>
+    </div>
+  </div>
+</article>
+
+
+    <section id="about">
+      <div class="sectionTitle">
+        <div>
+          <h2>Pourquoi Atlas Wear?</h2>
+          <p>شحال من تفصيلة كتفرق.</p>
+        </div>
+      </div>
+
+      <div class="twoCols">
+        <div class="box">
+          <h3>✨ جودة وراحة</h3>
+          <ul>
+            <li>قماش مريح وكيصبر</li>
+            <li>خياطة نظيفة</li>
+            <li>Coupe modern / Oversize</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>🚚 توصيل ساهل</h3>
+          <ul>
+            <li>Livraison partout au Maroc</li>
+            <li>Paiement à la livraison (option)</li>
+            <li>تأكيد الطلب عبر WhatsApp</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note">
+        ✍️ بدّل النص والصور ديالك: تقدر تحط Photos ديال الهوديز الحقيقيين باش تولّي الثقة أعلى بزاف.
+      </p>
+    </section>
+
+    <section id="order">
+      <div class="sectionTitle">
+        <div>
+          <h2>Commande rapide</h2>
+          <p>عمّر المعلومات و غادي يتحل WhatsApp برسالة جاهزة.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="formRow">
+          <input class="grow" id="custName" placeholder="Nom / Smiytek" />
+          <input class="grow" id="custCity" placeholder="Ville (Casablanca, Rabat...)" />
+        </div>
+        <div class="formRow">
+          <select class="grow" id="productName">
+            <option value="Atlas Hoodie — Black">Atlas Hoodie — Black</option>
+            <option value="Atlas Hoodie — Beige">Atlas Hoodie — Beige</option>
+            <option value="Atlas Hoodie — Grey">Atlas Hoodie — Grey</option>
+          </select>
+          <select class="grow" id="size">
+            <option value="S">Size S</option>
+            <option value="M">Size M</option>
+            <option value="L">Size L</option>
+            <option value="XL">Size XL</option>
+          </select>
+          <select class="grow" id="qty">
+            <option value="1">Qty 1</option>
+            <option value="2">Qty 2</option>
+            <option value="3">Qty 3</option>
+          </select>
+        </div>
+
+        <div class="formRow">
+          <a class="btn primary" href="#" onclick="sendWhatsApp(); return false;">📲 Commander via WhatsApp</a>
+          <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener">📷 Instagram</a>
+        </div>
+
+        <div class="note">
+          ✅ خاصك غير تبدّل رقم واتساب ديالك فالكود (تحت) + روابط الانستغرام.
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Atlas Wear Morocco</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn" href="#products">Produits</a>
+        <a class="btn" href="#order">Commander</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ✅ بدّل هاد الرقم لرقم واتساب ديالك بصيغة دولية (المغرب: 212)
+    const WHATSAPP_NUMBER = "212600000000";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function buildMessage(product, price){
+      const name = document.getElementById("custName").value.trim() || "—";
+      const city = document.getElementById("custCity").value.trim() || "—";
+      const size = document.getElementById("size").value;
+      const qty  = document.getElementById("qty").value;
+
+      return `سلام Atlas Wear Morocco 👋
+بغيت نطلب:
+• المنتج: ${product}
+• المقاس: ${size}
+• الكمية: ${qty}
+• الثمن: ${price} MAD
+
+المعلومات:
+• الاسم: ${name}
+• المدينة: ${city}
+
+شكرا 🙏`;
+    }
+
+    function sendWhatsApp(){
+      const product = document.getElementById("productName").value;
+      const price = "299"; // بدّل الثمن إذا بغيتي
+      const msg = buildMessage(product, price);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+    }
+
+    function quickOrder(product, price){
+      // يعمر الاختيار فالفورم ويهبط للطلب
+      document.getElementById("productName").value = product;
+      window.location.hash = "#order";
+      // يفتح واتساب مباشرة برسالة جاهزة
+      const msg = buildMessage(product, price);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
